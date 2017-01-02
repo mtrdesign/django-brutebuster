@@ -13,10 +13,13 @@ except ImportError:
 
 _thread_locals = local()
 
+
 def get_request():
     return getattr(_thread_locals, 'request', None)
 
-class RequestMiddleware (object):
+
+class RequestMiddleware(object):
     """Provides access to the request object via thread locals"""
-    def process_request (self, request):
+
+    def process_request(self, request):
         _thread_locals.request = request
