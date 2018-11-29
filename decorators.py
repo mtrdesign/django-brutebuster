@@ -54,6 +54,10 @@ def protect_and_serve(auth_func):
 
         result = auth_func(*args, **kwargs)
         if result:
+            # if login is success we clear failures field if exists
+            if fa:
+                fa.failures = 0
+                fa.save()
             # the authentication was successful - we do nothing
             # special
             return result
