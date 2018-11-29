@@ -5,6 +5,7 @@ Brutebuster needs access to the REMOTE_IP of the incoming request. We're doing
 this by adding the request object to the thread_local space
 """
 import sys
+from django.utils.deprecation import MiddlewareMixin
 
 try:
     from threading import local
@@ -18,7 +19,7 @@ def get_request():
     return getattr(_thread_locals, 'request', None)
 
 
-class RequestMiddleware(object):
+class RequestMiddleware(MiddlewareMixin):
     """Provides access to the request object via thread locals"""
 
     def process_request(self, request):

@@ -10,7 +10,7 @@ Installation
 ------------
 1. Install the BruteBuster module to your Python path
 ```
-#easy_install django-brutebuster
+#pip install django-brutebuster
 ```
 To verify that the Python module is available, you can run the Django shell and check the value of BruteBuster.version:
 ```
@@ -18,13 +18,13 @@ $python manage.py shell
 (InteractiveConsole)
 >>> import BruteBuster
 >>> print BruteBuster.version
-0.1
+0.1.9
 ```
 If you don't see any errors, then congrats! The hard part is over.
 
 2. Add BruteBuster to your INSTALLED_APPS list in settings.py
 3. Add BruteBuster.middleware.RequestMiddleware to your MIDDLEWARE_CLASSES in settings.py
-4. Run python manage.py syncdb to add the BruteBuster table to your database
+4. Run python manage.py migrate --run-syncdb to add the BruteBuster table to your database
 5. That's it! Don't forget to restart your server, if needed.
 
 Operation
