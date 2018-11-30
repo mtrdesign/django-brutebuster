@@ -10,15 +10,15 @@ Installation
 ------------
 1. Install the BruteBuster module to your Python path
 ```
-#pip install django-brutebuster
+#pip install django-brutebuster2
 ```
 To verify that the Python module is available, you can run the Django shell and check the value of BruteBuster.version:
 ```
 $python manage.py shell
 (InteractiveConsole)
 >>> import BruteBuster
->>> print BruteBuster.version
-0.1.9
+>>> print(BruteBuster.version)
+0.2.0
 ```
 If you don't see any errors, then congrats! The hard part is over.
 
